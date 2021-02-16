@@ -10,7 +10,7 @@ import {useStore} from "../store";
 import Header from "../components/Header";
 
 const sendEvent = (username, index, response) => {
-    let product_id = Demo[index].product_id;
+    let product_id = (Demo[index].Channel + "_" + Demo[index].Source_Product_Identifier).replace(" ","_");
     firebase.database()
         .ref('Events_DB/' + username + "_" + product_id)
         .set({
@@ -61,10 +61,10 @@ const Home = () => {
                     {Demo.map((item, index) => (
                         <Card key={index}>
                             <CardItem
-                                image={item.image_url}
-                                name={item.label_prediction}
-                                description={item.title}
-                                matches={item.prob_prediction}
+                                image={item.Image_URL}
+                                name={item.Title}
+                                description={item.Description}
+                                matches={"0"}
                                 actions
                                 onPressLeft={() => this.swiper.swipeLeft()}
                                 onPressRight={() => this.swiper.swipeRight()}
