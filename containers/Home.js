@@ -21,10 +21,18 @@ const sendEvent = (username, index, response) => {
             processed: 0,
         })
         .catch((err)=>{console.log('error ', err)})
+
+};
+
+const updateScore = (username, userScore) => {
+    firebase.database()
+        .ref('users/' + username)
+        .update({score: userScore})
+        .catch((err)=>{console.log('error ', err)})
 };
 
 const Home = () => {
-    const {username} = useStore();
+    const {username, score, setScore} = useStore();
     return (
         <ImageBackground
             source={require('../assets/images/bg.png')}
@@ -37,8 +45,16 @@ const Home = () => {
                 </View>
 
                 <CardStack
-                    onSwipedLeft={(index) => sendEvent(username, index,0)}
-                    onSwipedRight={(index) => sendEvent(username, index,1)}
+                    onSwipedLeft={(index) => {
+                        sendEvent(username, index,0);
+                        updateScore(username, score+1);
+                        setScore(score+1);
+                    }}
+                    onSwipedRight={(index) => {
+                        sendEvent(username, index,1);
+                        updateScore(username, score+1);
+                        setScore(score+1);
+                    }}
                     loop={true}
                     verticalSwipe={false}
                     renderNoMoreCards={() => null}
