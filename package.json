@@ -15,6 +15,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
     "react-native-web": "~0.13.12",
     "swiper": "^6.4.11",
+    "recompose": "^0.30.0",
     "expo-asset": "~8.2.0",
     "expo-updates": "~0.3.3",
     "expo-constants": "~9.2.0",

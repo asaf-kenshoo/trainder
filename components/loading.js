@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, ActivityIndicator, StyleSheet, TouchableOpacity} from 'react-native';
 
-import {goToLogin, goToTabs} from '../navigation';
+import {goToLogin, goToTabs} from '../RootNavigation';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from "./Icon";

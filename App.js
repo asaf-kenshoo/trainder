@@ -6,38 +6,41 @@ import { Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-
+import { navigationRef } from './RootNavigation';
 import styles from "./assets/styles";
 import HomeScreen from "./containers/Home";
 import MatchesScreen from "./containers/Matches";
+import Login from "./components/Login";
+import {compose} from "recompose";
+import {useStore, withStore} from "./store";
 
 function HomeNav() {
   return (
     <Text style={[styles.iconMenu, { color: iconFocused }]}>
-    asaf
-							<Icon name="search" />
-						</Text>
+        <Icon name="search" />
+    </Text>
   );
 }
 
 function ProfileNav() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile!</Text>
+
     </View>
   );
 }
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+const App = ()=>{
+    const {isSignedIn} = useStore()
   return (
-    <NavigationContainer>
+      isSignedIn ? (
+    <NavigationContainer  ref={navigationRef}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-
             if (route.name === 'Home') {
               iconName = focused ? 'ios-information-circle' : 'ios-information-circle-outline';
             } else if (route.name === 'Settings') {
@@ -57,5 +60,10 @@ export default function App() {
         <Tab.Screen name="Settings" component={ProfileNav} />
       </Tab.Navigator>
     </NavigationContainer>
+      ) : <Login/>
   );
 }
+
+export default compose(withStore)(App);
+
+
