@@ -9,9 +9,6 @@ import {
   TouchableOpacity
 } from 'react-native';
 import ProfileItem from '../components/ProfileItem';
-import Icon from '../components/Icon';
-import Demo from '../assets/data/demo.js';
-
 const Profile = () => {
 
   return (
@@ -19,9 +16,9 @@ const Profile = () => {
       <ScrollView >
         <ProfileItem style={{PaddingTop: "-60%"}}
           name={"Robert Downey jr"}
-          iconPath={"https://i.ibb.co/ChM7Fkq/image.png"} 
-          score={234} 
-          level={1} 
+          iconPath={"https://i.ibb.co/ChM7Fkq/image.png"}
+          score={234}
+          level={1}
           numberOfAnswers={123}
         />
       <View>
