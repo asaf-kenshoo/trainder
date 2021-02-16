@@ -60,9 +60,9 @@ const RootNavigate = () => {
                     <Tab.Screen name="Profile" component={ProfileNav}/>
                 </Tab.Navigator>
             </NavigationContainer>
-        ) : <HomeScreen/>
+        ) : <Login/>
     );
-}
+};
 export default RootNavigate;
 
 
