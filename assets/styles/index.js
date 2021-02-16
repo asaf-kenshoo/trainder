@@ -155,6 +155,10 @@ export default StyleSheet.create({
 	},
 
 	// COMPONENT - PROFILE ITEM
+  centeralizeProfileContent: {
+    justifyContent: 'top',
+    alignItems: 'center'
+  },
 	containerProfileItem: {
 		backgroundColor: WHITE,
 		paddingHorizontal: 10,
@@ -181,13 +185,19 @@ export default StyleSheet.create({
 		justifyContent:"center",
 		alignSelf: "center"
 	},
+  profileInviteFriendsLabel: {
+    backgroundColor: '#32a897',
+    height: 35,
+    width: 130,
+    marginLeft: 5,
+    borderRadius : 15
+  },
 	matchesTextProfileItem: {
 		// fontFamily: ICON_FONT,
 		color: WHITE
 	},
 	name: {
 		paddingTop: 25,
-		paddingBottom: 5,
 		color: DARK_GRAY,
 		fontSize: 15,
 		textAlign: "center"
@@ -200,6 +210,7 @@ export default StyleSheet.create({
 	},
 	info: {
 		paddingVertical: 8,
+    paddingTop: 8,
 		flexDirection: "row",
 		alignItems: "center"
 	},

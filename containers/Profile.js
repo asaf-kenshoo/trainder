@@ -13,17 +13,17 @@ const Profile = () => {
 
   return (
 
-      <ScrollView >
+      <ScrollView style={styles.centeralizeProfileContent}>
         <ProfileItem style={{PaddingTop: "-60%"}}
-          name={"Robert Downey jr"}
+          name={"Asaf The Snitch"}
           iconPath={"https://i.ibb.co/ChM7Fkq/image.png"}
           score={234}
           level={1}
           numberOfAnswers={123}
         />
-      <View>
-        <View style={{backgroundColor: '#32a897', height: 35, textAlign: "center", "padding-top": 5}}>
-        <Text style={{ color: 'white' }}>INVITE FRIENDS </Text>
+      <View style={styles.centeralizeProfileContent}>
+        <View style={styles.profileInviteFriendsLabel}>
+          <Text style={{ color: 'white', textAlign: 'center', paddingTop: 8}}>INVITE FRIENDS </Text>
         </View>
       </View>
       </ScrollView>
