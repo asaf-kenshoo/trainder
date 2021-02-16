@@ -13,17 +13,6 @@ import Icon from '../components/Icon';
 import Demo from '../assets/data/demo.js';
 
 const Profile = () => {
-  const {
-    age,
-    image,
-    info1,
-    info2,
-    info3,
-    info4,
-    location,
-    match,
-    name
-  } = Demo[7];
 
   return (
 
@@ -36,9 +25,9 @@ const Profile = () => {
           numberOfAnswers={123}
         />
       <View>
-        <div style={{backgroundColor: '#32a897', height: "35px", textAlign: "center", "padding-top": "5px", "border-radius": "15px"}}>
+        <View style={{backgroundColor: '#32a897', height: "35px", textAlign: "center", "padding-top": "5px", "border-radius": "15px"}}>
         <Text style={{ color: 'white' }}>INVITE FRIENDS </Text>
-        </div>
+        </View>
       </View>
       </ScrollView>
   );
