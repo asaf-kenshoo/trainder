@@ -1,15 +1,18 @@
 import React from 'react';
 import styles from '../assets/styles';
-
-import { Text, TouchableOpacity } from 'react-native';
+import {Text, View, Image, Dimensions, TouchableOpacity, ImageBackground} from 'react-native';
 import Icon from './Icon';
 
 const Header = () => {
   return (
     <TouchableOpacity style={styles.header}>
-      <Text style={styles.filtersText}>
-        <Icon name="filter" /> Filters
-      </Text>
+        <View>
+            <View style={styles.headerLogo}>
+                <Image style={{height:30,width:120}}
+                       source={require('../assets/images/trainer_logo.png')} />
+            </View>
+
+        </View>
     </TouchableOpacity>
   );
 };

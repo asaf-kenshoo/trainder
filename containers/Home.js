@@ -34,7 +34,7 @@ const Home = () => {
     const {username, score, setScore} = useStore();
     return (
         <ImageBackground
-            source={require('../assets/images/bg.png')}
+            source={require('../assets/images/gradient_bg.png')}
             style={styles.bg}
         >
             <View style={styles.containerHome}>

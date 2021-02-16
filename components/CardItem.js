@@ -71,7 +71,7 @@ const CardItem = ({
 
           <TouchableOpacity style={styles.button} onPress={() => onPressLeft()}>
             <Text style={styles.like}>
-              <Icon size={30} name="heart" />
+              <Icon size={50} name="check-circle" />
             </Text>
           </TouchableOpacity>
 
@@ -80,7 +80,8 @@ const CardItem = ({
             onPress={() => onPressRight()}
           >
             <Text style={styles.dislike}>
-              <Icon size={30} name="thumbs-down" />
+
+              <Icon size={50} name="times-circle" />
             </Text>
           </TouchableOpacity>
 
