@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../assets/styles';
+import ProgressBar from './ProgressBar';
 import { StyleSheet, Dimensions } from "react-native";
 
 import { Image, Text, View } from 'react-native';
@@ -29,7 +30,7 @@ const ProfileItem = ({
         <Text style={styles.name}>{score} XP </Text>
 
       </View>
-
+      <ProgressBar completed={15}ProgressBar/>
     </View>
   );
 };
