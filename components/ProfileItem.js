@@ -28,11 +28,6 @@ const ProfileItem = ({
         /> {score} XP
 
       </View>
-      <View>
-        <div style={{backgroundColor: 'blue', height: "23px", width: "50%"}}>
-        <Text style={{ color: 'white', textAlign: 'center' }}>INVITE FRIENDS </Text>
-        </div>
-      </View>
 
     </View>
   );
