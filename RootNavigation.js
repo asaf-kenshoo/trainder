@@ -6,12 +6,12 @@ import {Text, View} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import RootNavigate, {navigationRef} from './RootNavigation';
 import styles from "./assets/styles";
 import HomeScreen from "./containers/Home";
 import MatchesScreen from "./containers/Matches";
 import Login from "./components/Login";
 import Profile from "./containers/Profile";
+import {useStore} from "./store";
 
 function HomeNav() {
     return (
@@ -36,7 +36,7 @@ const RootNavigate = () => {
     const {isSignedIn} = useStore();
     return (
         isSignedIn ? (
-            <NavigationContainer ref={navigationRef}>
+            <NavigationContainer>
                 <Tab.Navigator
                     screenOptions={({route}) => ({
                         tabBarIcon: ({focused, color, size}) => {
@@ -63,7 +63,6 @@ const RootNavigate = () => {
         ) : <Login/>
     );
 }
-
 export default RootNavigate;
 
 
