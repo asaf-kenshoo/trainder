@@ -4,8 +4,7 @@ const db = firebase.database();
 
 export const StoreContext = createContext([]);
 
-export const withStore = UnComposedComponent => {
-    return function DCMStoreComponent(props) {
+const StateProvider = ({ children }) => {
         const [isSignedIn,setIsSignedIn] = useState(false);
         const [username,setUsername] = useState('');
         const [score, setScore] = useState('');
@@ -68,10 +67,9 @@ export const withStore = UnComposedComponent => {
                     signUp
                 }}
             >
-                <UnComposedComponent {...props} />
+                {children}
             </StoreContext.Provider>
         );
-    };
 };
-
+export default StateProvider;
 export const useStore = () => useContext(StoreContext);
