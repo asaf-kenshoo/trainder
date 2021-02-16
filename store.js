@@ -6,7 +6,7 @@ const db = firebase.database();
 export const StoreContext = createContext([]);
 
 const StateProvider = ({ children }) => {
-        const [isSignedIn,setIsSignedIn] = useState(true);
+        const [isSignedIn,setIsSignedIn] = useState(false);
         const [username,setUsername] = useState('');
         const [score, setScore] = useState('');
 

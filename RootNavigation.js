@@ -13,14 +13,6 @@ import Login from "./components/Login";
 import Profile from "./containers/Profile";
 import {useStore} from "./store";
 
-function HomeNav() {
-    return (
-        <Text style={[styles.iconMenu, {color: iconFocused}]}>
-            asaf
-            <Icon name="search"/>
-        </Text>
-    );
-}
 
 function ProfileNav() {
     return (
