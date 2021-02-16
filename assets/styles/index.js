@@ -33,17 +33,28 @@ export default StyleSheet.create({
         shadowOffset: {height: 0, width: 0}
     },
     matchesCardItem: {
-        marginTop: -35,
-        backgroundColor: PRIMARY_COLOR,
-        paddingVertical: 7,
+        marginTop: 15,
+        backgroundColor: "#28D7EB",
+        paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: 20
     },
     matchesTextCardItem: {
         // fontFamily: ICON_FONT,
-        color: WHITE
+        color: WHITE,
+        textAlign: "center",
+        fontSize: 18,
+        fontWeight: "bold"
+    },
+    descriptionWrapper: {
+        paddingHorizontal:10,
+        backgroundColor: "#F3F7F7",
+        marginHorizontal: 15,
+        textAlign: "center",
+        maxHeight: 240,
     },
     descriptionCardItem: {
+        paddingHorizontal:10,
         color: GRAY,
         textAlign: "center"
     },
@@ -238,7 +249,7 @@ export default StyleSheet.create({
         flex: 1,
         resizeMode: "cover",
         width: DIMENSION_WIDTH,
-        height: DIMENSION_HEIGHT
+        height: DIMENSION_HEIGHT-340
     },
     top: {
         paddingTop: 50,
@@ -256,7 +267,9 @@ export default StyleSheet.create({
     },
 
     // CONTAINER - HOME
-    containerHome: {marginHorizontal: 10},
+    containerHome: {
+        marginHorizontal: 10
+    },
 
     // CONTAINER - MATCHES
     containerMatches: {

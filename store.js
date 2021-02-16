@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import { LogBox } from 'react-native';
 import firebase from "./firebase.js";
 const db = firebase.database();
 
@@ -19,15 +20,15 @@ const StateProvider = ({ children }) => {
                             setIsSignedIn(true);
                         }
                         else {
-                            console.log("username and password do not match");
+                            //console.log("username and password do not match");
                         }
                     }
                     else {
-                        console.log("username: " + username + " does not exist");
+                        //console.log("username: " + username + " does not exist");
                     }
                 })
                 .catch(function(error) {
-                    console.error(error);
+                    //console.error(error);
                 });
         };
 
@@ -35,7 +36,7 @@ const StateProvider = ({ children }) => {
             db.ref().child("users").child(username).once('value',
                 function(snapshot) {
                     if (snapshot.exists()) {
-                        console.log("username already exists!")
+                        //console.log("username already exists!")
                     }
                     else {
                         db.ref('users/' + username)
@@ -43,14 +44,14 @@ const StateProvider = ({ children }) => {
                                 password: password,
                                 score: 0,
                             });
-                        console.log("added new user:" + username);
+                        //console.log("added new user:" + username);
                         setUsername(username);
                         setScore(0);
                         setIsSignedIn(true);
                     }
                 })
                 .catch(function(error) {
-                    console.error(error);
+                    //console.error(error);
                 });
         };
 

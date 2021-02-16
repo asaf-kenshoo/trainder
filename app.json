@@ -2,11 +2,12 @@
   "name": "rn",
   "displayName": "rn",
   "expo": {
-    "name": "rn",
-    "slug": "rn",
+    "name": "trinder",
+    "slug": "trinder",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": ""
   }
 }

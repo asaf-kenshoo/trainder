@@ -19,7 +19,7 @@ const sendEvent = (username, index, response) => {
             answer: response,
             processed: 0,
         })
-        .catch((err)=>{console.log('error ', err)})
+        .catch((err)=>{})
 
 };
 
@@ -27,12 +27,13 @@ const updateScore = (username, userScore) => {
     firebase.database()
         .ref('users/' + username)
         .update({score: userScore})
-        .catch((err)=>{console.log('error ', err)})
+        .catch((err)=>{})
 };
 
 const Home = () => {
     const {username, score, setScore} = useStore();
     return (
+
         <ImageBackground
             source={require('../assets/images/gradient_bg.png')}
             style={styles.bg}
@@ -64,7 +65,7 @@ const Home = () => {
                                 image={item.Image_URL}
                                 name={item.Title}
                                 description={item.Description}
-                                matches={"0"}
+                                question={item.Question}
                                 actions
                                 onPressLeft={() => this.swiper.swipeLeft()}
                                 onPressRight={() => this.swiper.swipeRight()}
