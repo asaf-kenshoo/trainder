@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../assets/styles';
+import { StyleSheet, Dimensions } from "react-native";
 
 import { Image, Text, View } from 'react-native';
 import Icon from './Icon';
@@ -10,8 +11,8 @@ const ProfileItem = ({
   return (
     <View style={styles.containerProfileItem}>
       <View style={styles.matchesProfileItem}>
-        <Image style={{height: "100px", width: "100px", "border-radius": "50%"}}
-        source={iconPath} />
+        <Image style={styles.profileImage}
+        source={{uri:iconPath}} />
       </View>
 
       <Text style={styles.name}>{name}</Text>
