@@ -197,7 +197,7 @@ export default StyleSheet.create({
 		color: WHITE
 	},
 	name: {
-		paddingTop: 25,
+		paddingTop: 2,
 		color: DARK_GRAY,
 		fontSize: 15,
 		textAlign: "center"
@@ -209,10 +209,10 @@ export default StyleSheet.create({
 		fontSize: 13
 	},
 	info: {
-		paddingVertical: 8,
-    paddingTop: 8,
 		flexDirection: "row",
-		alignItems: "center"
+		alignItems: "center",
+    backgroundColor: '#ebf5ee',
+    borderRadius: 4
 	},
 	iconProfile: {
 		// fontFamily: ICON_FONT,
