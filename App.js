@@ -62,7 +62,7 @@ const App = ()=>{
         <Tab.Screen name="Settings" component={ProfileNav} />
       </Tab.Navigator>
     </NavigationContainer>
-      ) : <Login/>
+      ) : <Profile/>
   );
 }
 

@@ -188,13 +188,19 @@ export default StyleSheet.create({
 		shadowColor: BLACK,
 		shadowOffset: { height: 0, width: 0 }
 	},
+	profileImage:{
+			width: 100,
+			height: 100,
+			borderRadius: 100 / 2,
+			backgroundColor: "red",
+	},
 	matchesProfileItem: {
-		width: 131,
-		marginTop: -15,
+		marginTop: 15,
 		paddingVertical: 7,
 		paddingHorizontal: 20,
 		borderRadius: 20,
 		textAlign: "center",
+		justifyContent:"center",
 		alignSelf: "center"
 	},
 	matchesTextProfileItem: {
