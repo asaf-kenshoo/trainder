@@ -6,15 +6,12 @@ import {Text, View} from 'react-native';
 import {Ionicons} from '@expo/vector-icons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
-import {navigationRef} from './RootNavigation';
+import RootNavigate, {navigationRef} from './RootNavigation';
 import styles from "./assets/styles";
 import HomeScreen from "./containers/Home";
 import MatchesScreen from "./containers/Matches";
 import Login from "./components/Login";
-import {compose} from "recompose";
 import Profile from "./containers/Profile";
-import StateProvider, {useStore} from "./store";
-import State from "./store";
 
 function HomeNav() {
     return (
