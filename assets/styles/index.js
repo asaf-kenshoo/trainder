@@ -1,4 +1,4 @@
-import {StyleSheet, Dimensions} from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const PRIMARY_COLOR = "#279A72";
 const SECONDARY_COLOR = "#279A72";
@@ -162,65 +162,76 @@ export default StyleSheet.create({
         paddingTop: 5
     },
 
-    // COMPONENT - PROFILE ITEM
-    containerProfileItem: {
-        backgroundColor: WHITE,
-        paddingHorizontal: 10,
-        paddingBottom: 25,
-        margin: 20,
-        borderRadius: 8,
-        shadowOpacity: 0.05,
-        shadowRadius: 10,
-        shadowColor: BLACK,
-        shadowOffset: {height: 0, width: 0}
-    },
-    profileImage: {
-        width: 100,
-        height: 100,
-        borderRadius: 100 / 2,
-        backgroundColor: "red",
-    },
-    matchesProfileItem: {
-        marginTop: 15,
-        paddingVertical: 7,
-        paddingHorizontal: 20,
-        borderRadius: 20,
-        textAlign: "center",
-        justifyContent: "center",
-        alignSelf: "center"
-    },
-    matchesTextProfileItem: {
-        // fontFamily: ICON_FONT,
-        color: WHITE
-    },
-    name: {
-        paddingTop: 25,
-        paddingBottom: 5,
-        color: DARK_GRAY,
-        fontSize: 15,
-        textAlign: "center"
-    },
-    descriptionProfileItem: {
-        color: GRAY,
-        textAlign: "center",
-        paddingBottom: 20,
-        fontSize: 13
-    },
-    info: {
-        paddingVertical: 8,
-        flexDirection: "row",
-        alignItems: "center"
-    },
-    iconProfile: {
-        // fontFamily: ICON_FONT,
-        fontSize: 12,
-        color: DARK_GRAY,
-        paddingHorizontal: 10
-    },
-    infoContent: {
-        color: GRAY,
-        fontSize: 13
-    },
+	// COMPONENT - PROFILE ITEM
+  centeralizeProfileContent: {
+    justifyContent: 'top',
+    alignItems: 'center'
+  },
+	containerProfileItem: {
+		backgroundColor: WHITE,
+		paddingHorizontal: 10,
+		paddingBottom: 25,
+		margin: 20,
+		borderRadius: 8,
+		shadowOpacity: 0.05,
+		shadowRadius: 10,
+		shadowColor: BLACK,
+		shadowOffset: { height: 0, width: 0 }
+	},
+	profileImage:{
+			width: 100,
+			height: 100,
+			borderRadius: 100 / 2,
+			backgroundColor: "red",
+	},
+	matchesProfileItem: {
+		marginTop: 15,
+		paddingVertical: 7,
+		paddingHorizontal: 20,
+		borderRadius: 20,
+		textAlign: "center",
+		justifyContent:"center",
+		alignSelf: "center"
+	},
+  profileInviteFriendsLabel: {
+    backgroundColor: '#32a897',
+    height: 35,
+    width: 130,
+    marginLeft: 5,
+    borderRadius : 15
+  },
+	matchesTextProfileItem: {
+		// fontFamily: ICON_FONT,
+		color: WHITE
+	},
+	name: {
+		paddingTop: 25,
+		color: DARK_GRAY,
+		fontSize: 15,
+		textAlign: "center"
+	},
+	descriptionProfileItem: {
+		color: GRAY,
+		textAlign: "center",
+		paddingBottom: 20,
+		fontSize: 13
+	},
+	info: {
+		paddingVertical: 8,
+    paddingTop: 8,
+		flexDirection: "row",
+		alignItems: "center"
+	},
+	iconProfile: {
+		// fontFamily: ICON_FONT,
+		fontSize: 12,
+		color: DARK_GRAY,
+		paddingHorizontal: 10
+	},
+	infoContent: {
+		color: GRAY,
+		fontSize: 13
+	},
 
     // CONTAINER - GENERAL
     bg: {
