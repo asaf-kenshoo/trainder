@@ -22,7 +22,7 @@ const Profile = () => {
           numberOfAnswers={123}
         />
       <View>
-        <View style={{backgroundColor: '#32a897', height: "35px", textAlign: "center", "padding-top": "5px", "border-radius": "15px"}}>
+        <View style={{backgroundColor: '#32a897', height: 35, textAlign: "center", "padding-top": 5}}>
         <Text style={{ color: 'white' }}>INVITE FRIENDS </Text>
         </View>
       </View>
