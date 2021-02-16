@@ -3,13 +3,12 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 import {navigate} from '../RootNavigation';
 import {useStore} from "../store";
 const Login = ()=>  {
-    useStore()
+    const [password,setPassword] = useState();
     const {
-        email,
-        password,
-        setEmail,
-        setPassword,
-        login
+        username,
+        setUsername,
+        login,
+        signUp
     } = useStore();
         return (
             <View style={styles.container}>
@@ -17,9 +16,9 @@ const Login = ()=>  {
                 <View style={styles.inputView} >
                     <TextInput
                         style={styles.inputText}
-                        placeholder="Email..."
+                        placeholder="Username..."
                         placeholderTextColor="#003f5c"
-                        onChangeText={text => setEmail(text)}/>
+                        onChangeText={text => setUsername(text)}/>
                 </View>
                 <View style={styles.inputView} >
                     <TextInput
@@ -33,18 +32,19 @@ const Login = ()=>  {
                     <Text style={styles.forgot}>Forgot Password?</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                    onPress={()=>login(email,password) }
+                    onPress={()=>login(username,password) }
                     style={styles.loginBtn}>
                     <Text style={styles.loginText}>LOGIN</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onClick>
-                    <Text style={styles.loginText}>Signup</Text>
+                <TouchableOpacity
+                    onPress={()=>signUp(username,password) }>
+                    <Text style={styles.loginText}>Sign Up</Text>
                 </TouchableOpacity>
 
 
             </View>
         );
-}
+};
 
 const styles = StyleSheet.create({
     container: {

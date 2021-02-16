@@ -1,27 +1,66 @@
 import React, { createContext, useContext, useState } from "react";
+import firebase from "./firebase.js";
+const db = firebase.database();
 
 export const StoreContext = createContext([]);
 
 export const withStore = UnComposedComponent => {
     return function DCMStoreComponent(props) {
         const [isSignedIn,setIsSignedIn] = useState(false);
-        const [email,setEmail] = useState('')
-        const [password,setPassword] = useState('')
+        const [username,setUsername] = useState('');
 
-        const login =(email,password) =>{
-            setIsSignedIn(true);
-        }
+        const login =(username,password) =>{
+            db.ref().child("users").child(username).once('value',
+                function(snapshot) {
+                    if (snapshot.exists()) {
+                        if(snapshot.val().password === password){
+                            setUsername(username);
+                            setIsSignedIn(true);
+                        }
+                        else {
+                            console.log("username and password do not match");
+                        }
+                    }
+                    else {
+                        console.log("username: " + username + " does not exist");
+                    }
+                })
+                .catch(function(error) {
+                    console.error(error);
+                });
+        };
+
+        const signUp =(username,password) => {
+            db.ref().child("users").child(username).once('value',
+                function(snapshot) {
+                    if (snapshot.exists()) {
+                        console.log("username already exists!")
+                    }
+                    else {
+                        db.ref('users/' + username)
+                            .set({
+                                password: password,
+                                score: 0,
+                            });
+                        console.log("added new user:" + username);
+                        setUsername(username);
+                        setIsSignedIn(true);
+                    }
+                })
+                .catch(function(error) {
+                    console.error(error);
+                });
+        };
 
         return (
             <StoreContext.Provider
                 value={{
-                    email,
-                    setEmail,
-                    password,
-                    setPassword,
+                    username,
+                    setUsername,
                     isSignedIn,
                     setIsSignedIn,
-                    login
+                    login,
+                    signUp
                 }}
             >
                 <UnComposedComponent {...props} />
