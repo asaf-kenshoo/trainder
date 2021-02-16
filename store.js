@@ -8,6 +8,7 @@ export const withStore = UnComposedComponent => {
     return function DCMStoreComponent(props) {
         const [isSignedIn,setIsSignedIn] = useState(false);
         const [username,setUsername] = useState('');
+        const [score, setScore] = useState('');
 
         const login =(username,password) =>{
             db.ref().child("users").child(username).once('value',
@@ -15,6 +16,7 @@ export const withStore = UnComposedComponent => {
                     if (snapshot.exists()) {
                         if(snapshot.val().password === password){
                             setUsername(username);
+                            setScore(snapshot.val().score);
                             setIsSignedIn(true);
                         }
                         else {
@@ -44,6 +46,7 @@ export const withStore = UnComposedComponent => {
                             });
                         console.log("added new user:" + username);
                         setUsername(username);
+                        setScore(0);
                         setIsSignedIn(true);
                     }
                 })
@@ -57,6 +60,8 @@ export const withStore = UnComposedComponent => {
                 value={{
                     username,
                     setUsername,
+                    score,
+                    setScore,
                     isSignedIn,
                     setIsSignedIn,
                     login,
