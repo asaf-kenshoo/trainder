@@ -18,7 +18,7 @@ const Profile = () => {
 
       <ScrollView >
         <ProfileItem style={{PaddingTop: "-60%"}}
-          name={"Robert Downey jr"} 
+          name={"Robert Downey jr"}
           iconPath={"https://i.ibb.co/ChM7Fkq/image.png"} 
           score={234} 
           level={1} 

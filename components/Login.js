@@ -1,107 +1,97 @@
-import React, {Component} from 'react';
-import {Navigation} from 'react-native-navigation';
-import {
-    View,
-    Text,
-    TextInput,
-    Button,
-    TouchableOpacity,
-    StyleSheet,
-} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-import {goToTabs} from '../navigation';
-
-export default class Login extends Component {
-    static get options() {
-        return {
-            topBar: {
-                visible: false,
-                title: {
-                    text: 'Login',
-                },
-            },
-        };
-    }
-
-    state = {
-        username: '',
-    };
-
-    render() {
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import {navigate} from '../RootNavigation';
+import {useStore} from "../store";
+const Login = ()=>  {
+    useStore()
+    const {
+        email,
+        password,
+        setEmail,
+        setPassword,
+        login
+    } = useStore();
         return (
-            <View style={styles.wrapper}>
-                <View style={styles.container}>
-                    <View style={styles.main}>
-                        <View style={styles.fieldContainer}>
-                            <Text style={styles.label}>Enter your username</Text>
-                            <TextInput
-                                onChangeText={(username) => this.setState({username})}
-                                style={styles.textInput}
-                            />
-                        </View>
-
-                        <Button title="Login" color="#0064e1" onPress={this.login} />
-                        <TouchableOpacity onPress={this.goToForgotPassword}>
-                            <View style={styles.center}>
-                                <Text style={styles.link_text}>Forgot Password</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
+            <View style={styles.container}>
+                <Text style={styles.logo}>trainder</Text>
+                <View style={styles.inputView} >
+                    <TextInput
+                        style={styles.inputText}
+                        placeholder="Email..."
+                        placeholderTextColor="#003f5c"
+                        onChangeText={text => setEmail(text)}/>
                 </View>
+                <View style={styles.inputView} >
+                    <TextInput
+                        secureTextEntry
+                        style={styles.inputText}
+                        placeholder="Password..."
+                        placeholderTextColor="#003f5c"
+                        onChangeText={text => setPassword(text)}/>
+                </View>
+                <TouchableOpacity>
+                    <Text style={styles.forgot}>Forgot Password?</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={()=>login(email,password) }
+                    style={styles.loginBtn}>
+                    <Text style={styles.loginText}>LOGIN</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onClick>
+                    <Text style={styles.loginText}>Signup</Text>
+                </TouchableOpacity>
+
+
             </View>
         );
-    }
-
-    //
-    login = async () => {
-        const {username} = this.state;
-        if (username) {
-            await AsyncStorage.setItem('username', username);
-            goToTabs(global.icons, username);
-        }
-    };
-
-    goToForgotPassword = () => {
-        Navigation.push(this.props.componentId, {
-            component: {
-                name: 'ForgotPasswordScreen',
-            },
-        });
-    };
 }
-//
 
 const styles = StyleSheet.create({
-    wrapper: {
-        flex: 1,
-    },
     container: {
-        flex: 1,
+        width:'100%',
+        height:'100%',
+        backgroundColor: '#003f5c',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 20,
     },
-    fieldContainer: {
-        marginTop: 20,
+    logo:{
+        fontWeight:"bold",
+        fontSize:50,
+        color:"#fb5b5a",
+        marginBottom:40
     },
-    label: {
-        fontSize: 16,
+    inputView:{
+        backgroundColor:"#465881",
+        borderRadius:25,
+        height:50,
+        marginBottom:20,
+        justifyContent:"center",
+        padding:20
     },
-    textInput: {
-        height: 40,
-        marginTop: 5,
-        marginBottom: 10,
-        borderColor: '#ccc',
-        borderWidth: 1,
-        backgroundColor: '#eaeaea',
-        padding: 5,
+    inputText:{
+        flex: 1,
+        height:50,
+        color:"white",
+        width:"80%"
     },
-    link_text: {
-        color: '#2e45ec',
+    forgot:{
+        color:"white",
+        fontSize:11
     },
-    center: {
-        alignSelf: 'center',
-        marginTop: 10,
+    loginBtn:{
+        width:"80%",
+        backgroundColor:"#fb5b5a",
+        borderRadius:25,
+        height:50,
+        alignItems:"center",
+        justifyContent:"center",
+        marginTop:40,
+        marginBottom:10
     },
+    loginText:{
+        color:"white"
+    }
 });
+
+
+export default Login
