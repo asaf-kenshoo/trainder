@@ -10,20 +10,20 @@ import { NavigationContainer } from '@react-navigation/native';
 import styles from "./assets/styles";
 import HomeScreen from "./containers/Home";
 import MatchesScreen from "./containers/Matches";
+import Profile from "./containers/Profile";
 
 function HomeNav() {
   return (
     <Text style={[styles.iconMenu, { color: iconFocused }]}>
-    asaf
-							<Icon name="search" />
-						</Text>
+              <Icon name="search" />
+            </Text>
   );
 }
 
 function ProfileNav() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile!</Text>
+      <Profile />
     </View>
   );
 }

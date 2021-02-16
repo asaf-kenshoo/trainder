@@ -5,56 +5,35 @@ import { Text, View } from 'react-native';
 import Icon from './Icon';
 
 const ProfileItem = ({
-  age,
-  info1,
-  info2,
-  info3,
-  info4,
-  location,
-  matches,
-  name
+  name, iconPath, score, level, numberOfAnswers
 }) => {
   return (
     <View style={styles.containerProfileItem}>
       <View style={styles.matchesProfileItem}>
-        <Text style={styles.matchesTextProfileItem}>
-          <Icon name="heart" /> {matches}% Match!
-        </Text>
+        <img style={{height: "100px", width: "100px", "border-radius": "50%"}}
+        src={iconPath} />
       </View>
 
       <Text style={styles.name}>{name}</Text>
 
-      <Text style={styles.descriptionProfileItem}>
-        {age} - {location}
-      </Text>
-
       <View style={styles.info}>
-        <Text style={styles.iconProfile}>
-          <Icon name="user" />
-        </Text>
-        <Text style={styles.infoContent}>{info1}</Text>
+        <img style={{height: "23px", width: "23px"}}
+          src="https://cdn.iconscout.com/icon/free/png-256/swipe-1456613-1229963.png"
+        /> x {numberOfAnswers} | 
+        <img style={{height: "32px", width: "25px"}}
+          src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Star_Gold_Dark-512.png"
+        /> x {level} | 
+        <img style={{height: "32px", width: "32px"}}
+          src="https://image.flaticon.com/icons/png/512/124/124568.png"
+        /> {score} XP
+
+      </View>
+      <View>
+        <div style={{backgroundColor: 'blue', height: "23px", width: "50%"}}>
+        <Text style={{ color: 'white', textAlign: 'center' }}>INVITE FRIENDS </Text>
+        </div>
       </View>
 
-      <View style={styles.info}>
-        <Text style={styles.iconProfile}>
-          <Icon name="circle" />
-        </Text>
-        <Text style={styles.infoContent}>{info2}</Text>
-      </View>
-
-      <View style={styles.info}>
-        <Text style={styles.iconProfile}>
-          <Icon name="hashtag" />
-        </Text>
-        <Text style={styles.infoContent}>{info3}</Text>
-      </View>
-
-      <View style={styles.info}>
-        <Text style={styles.iconProfile}>
-          <Icon name="calendar" />
-        </Text>
-        <Text style={styles.infoContent}>{info4}</Text>
-      </View>
     </View>
   );
 };
