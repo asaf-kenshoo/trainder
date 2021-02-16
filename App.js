@@ -13,19 +13,20 @@ import MatchesScreen from "./containers/Matches";
 import Login from "./components/Login";
 import {compose} from "recompose";
 import {useStore, withStore} from "./store";
+import Profile from "./containers/Profile";
 
 function HomeNav() {
   return (
     <Text style={[styles.iconMenu, { color: iconFocused }]}>
-        <Icon name="search" />
-    </Text>
+              <Icon name="search" />
+            </Text>
   );
 }
 
 function ProfileNav() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-
+      <Profile />
     </View>
   );
 }
