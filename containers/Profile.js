@@ -29,13 +29,17 @@ const Profile = () => {
 
       <ScrollView >
         <ProfileItem style={{PaddingTop: "-60%"}}
-          name={"Poli"} 
+          name={"Robert Downey jr"} 
           iconPath={"https://i.ibb.co/ChM7Fkq/image.png"} 
           score={234} 
           level={1} 
           numberOfAnswers={123}
         />
-
+      <View>
+        <div style={{backgroundColor: '#32a897', height: "35px", textAlign: "center", "padding-top": "5px", "border-radius": "15px"}}>
+        <Text style={{ color: 'white' }}>INVITE FRIENDS </Text>
+        </div>
+      </View>
       </ScrollView>
   );
 };

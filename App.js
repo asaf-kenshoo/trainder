@@ -15,6 +15,7 @@ import Profile from "./containers/Profile";
 function HomeNav() {
   return (
     <Text style={[styles.iconMenu, { color: iconFocused }]}>
+    asaf
               <Icon name="search" />
             </Text>
   );
