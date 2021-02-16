@@ -2,13 +2,12 @@ import React from 'react';
 import { View, ImageBackground } from 'react-native';
 import CardStack, { Card } from 'react-native-card-stack-swiper';
 
-import City from '../components/City';
-import Filters from '../components/Filters';
 import CardItem from '../components/CardItem';
 import styles from '../assets/styles';
 import Demo from '../assets/data/demo.js';
 import firebase from "../firebase.js";
 import {useStore} from "../store";
+import Header from "../components/Header";
 
 const sendEvent = (username, index, response) => {
     let product_id = Demo[index].product_id;
@@ -40,8 +39,7 @@ const Home = () => {
         >
             <View style={styles.containerHome}>
                 <View style={styles.top}>
-                    <City />
-                    <Filters />
+                    <Header/>
                 </View>
 
                 <CardStack

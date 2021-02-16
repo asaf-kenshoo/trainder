@@ -4,9 +4,9 @@ import styles from '../assets/styles';
 import { Text, TouchableOpacity } from 'react-native';
 import Icon from './Icon';
 
-const Filters = () => {
+const Header = () => {
   return (
-    <TouchableOpacity style={styles.filters}>
+    <TouchableOpacity style={styles.header}>
       <Text style={styles.filtersText}>
         <Icon name="filter" /> Filters
       </Text>
@@ -14,4 +14,4 @@ const Filters = () => {
   );
 };
 
-export default Filters;
+export default Header;
