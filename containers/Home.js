@@ -34,49 +34,52 @@ const updateScore = (username, userScore) => {
 
 const Home = () => {
     const {username, score, setScore} = useStore();
+    const t = {};
     return (
         <View>
             <Header></Header>
             <ImageBackground
                 source={require('../assets/images/gradient_bg.png')}
                 style={styles.bg}>
-                <View style={styles.containerHome}>
-
-                    <CardStack
-                        onSwipedLeft={(index) => {
-                            sendEvent(username, index, 0);
-                            updateScore(username, score + 1);
-                            setScore(score + 1);
-                        }}
-                        onSwipedRight={(index) => {
-                            sendEvent(username, index, 1);
-                            updateScore(username, score + 1);
-                            setScore(score + 1);
-                        }}
-                        loop={true}
-                        verticalSwipe={false}
-                        renderNoMoreCards={() => null}
-                        ref={swiper => (this.swiper = swiper)}
-                    >
-                        {Demo.map((item, index) => (
-                            <Card key={index}>
-                                <CardItem
-                                    image={item.Image_URL}
-                                    name={item.Title}
-                                    description={item.Description}
-                                    question={item.Question}
-                                    actions
-                                    onPressLeft={() => this.swiper.swipeLeft()}
-                                    onPressRight={() => this.swiper.swipeRight()}
-                                />
-                            </Card>
-                        ))}
-                    </CardStack>
-                </View>
             </ImageBackground>
+            <View style={styles.containerHome}>
+
+                <CardStack
+                    onSwipedLeft={(index) => {
+                        sendEvent(username, index, 0);
+                        updateScore(username, score + 1);
+                        setScore(score + 1);
+                    }}
+                    onSwipedRight={(index) => {
+                        sendEvent(username, index, 1);
+                        updateScore(username, score + 1);
+                        setScore(score + 1);
+                    }}
+                    loop={true}
+                    verticalSwipe={false}
+                    renderNoMoreCards={() => null}
+                    ref={swiper => (t.swiper = swiper)}
+                >
+                    {Demo.map((item, index) => (
+                        <Card key={index}>
+                            <CardItem
+                                image={item.Image_URL}
+                                name={item.Title}
+                                description={item.Description}
+                                question={item.Question}
+                                actions
+                                onPressLeft={() => t.swiper.swipeLeft()}
+                                onPressRight={() => t.swiper.swipeRight()}
+                            />
+                        </Card>
+                    ))}
+                </CardStack>
+            </View>
+
         </View>
 
     );
 };
+
 
 export default Home;

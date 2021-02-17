@@ -5,7 +5,6 @@ import {StyleSheet} from 'react-native';
 import {Card} from 'react-native-paper';
 import {Text, View, Image, Dimensions, TouchableOpacity, ImageBackground} from 'react-native';
 import {Chip} from 'react-native-paper';
-import Icon from './Icon';
 import {useStore} from "../store";
 import AvatarIcon from "react-native-paper/src/components/Avatar/AvatarIcon";
 

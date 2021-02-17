@@ -21,7 +21,7 @@ const CardItem = ({
         {
             borderRadius: 8,
             width: variant ? fullWidth / 2 - 30 : fullWidth - 80,
-            height: variant ? 170 : 250,
+            height: variant ? 170 : 200,
             margin: variant ? 0 : 0
         }
     ];
@@ -77,8 +77,7 @@ const CardItem = ({
 
                     <TouchableOpacity style={styles.button} onPress={() => onPressLeft()}>
                         <Text style={styles.like}>
-
-                            <Icon size={55} name="times-circle"/>
+                            <Icon size={57} name="times-circle"/>
                         </Text>
                     </TouchableOpacity>
 
@@ -88,7 +87,7 @@ const CardItem = ({
                     >
                         <Text style={styles.dislike}>
 
-                            <Icon size={55} name="check-circle"/>
+                            <Icon size={57} name="check-circle"/>
                         </Text>
                     </TouchableOpacity>
 

@@ -24,16 +24,16 @@ export default StyleSheet.create({
     // COMPONENT - CARD ITEM
     containerCardItem: {
         backgroundColor: WHITE,
-        borderRadius: 8,
+        borderRadius: 30,
         alignItems: "center",
-        // margin: 10,
+        marginVertical:10,
         shadowOpacity: 0.05,
         shadowRadius: 10,
         shadowColor: BLACK,
-        shadowOffset: {height: 0, width: 0}
+        shadowOffset: {height: 10, width: 10}
     },
     matchesCardItem: {
-        marginTop: 15,
+        marginTop: 10,
         backgroundColor: "#28D7EB",
         paddingVertical: 10,
         paddingHorizontal: 20,
@@ -119,12 +119,12 @@ export default StyleSheet.create({
     like: {
         fontSize: 45,
         // fontFamily: ICON_FONT,
-        color: OFFLINE_STATUS
+        color: "#FE4D68"
     },
     dislike: {
-        fontSize: 25,
+        fontSize: 30,
         // fontFamily: ICON_FONT,
-        color: ONLINE_STATUS
+        color: "#2FE6B2"
     },
     flash: {
         // fontFamily: ICON_FONT,
@@ -150,7 +150,7 @@ export default StyleSheet.create({
     },
     headerScore: {
         paddingRight:13,
-        paddingTop: 4,
+        paddingTop: 0,
         paddingBottom: 3,
         marginHorizontal: -15,
         marginVertical: 2,
@@ -263,7 +263,7 @@ export default StyleSheet.create({
         flex: 1,
         resizeMode: "cover",
         width: DIMENSION_WIDTH,
-        height: DIMENSION_HEIGHT-340
+        height: DIMENSION_HEIGHT-300
     },
     top: {
         paddingTop: 50,
@@ -282,7 +282,7 @@ export default StyleSheet.create({
 
     // CONTAINER - HOME
     containerHome: {
-        marginHorizontal: 10
+        marginHorizontal: 20,
     },
 
     // CONTAINER - MATCHES
@@ -369,5 +369,60 @@ export default StyleSheet.create({
         // fontFamily: ICON_FONT,
         height: 20,
         paddingBottom: 7
+    },
+
+
+    content:{
+        flex: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    card1: {
+        backgroundColor: '#FE474C',
+    },
+    card2: {
+        backgroundColor: '#FEB12C',
+    },
+    label: {
+        lineHeight: 400,
+        textAlign: 'center',
+        fontSize: 55,
+        fontFamily: 'System',
+        color: '#ffffff',
+        backgroundColor: 'transparent',
+    },
+    footer:{
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    buttonContainer:{
+        width:220,
+        flexDirection:'row',
+        justifyContent: 'space-between',
+    },
+    orange:{
+        width:55,
+        height:55,
+        borderWidth:6,
+        borderColor:'rgb(246,190,66)',
+        borderRadius:55,
+        marginTop:-15
+    },
+    green:{
+        width:75,
+        height:75,
+        backgroundColor:'#fff',
+        borderRadius:75,
+        borderWidth:6,
+        borderColor:'#01df8a',
+    },
+    red:{
+        width:75,
+        height:75,
+        backgroundColor:'#fff',
+        borderRadius:75,
+        borderWidth:6,
+        borderColor:'#fd267d',
     }
 });
