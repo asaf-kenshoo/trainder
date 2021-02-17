@@ -9,40 +9,35 @@ const Login = ()=>  {
         login,
         signUp
     } = useStore();
-        return (
-            <View style={styles.container}>
-                <Text style={styles.logo}>trainder</Text>
-                <View style={styles.inputView} >
-                    <TextInput
-                        style={styles.inputText}
-                        placeholder="Username..."
-                        placeholderTextColor="#003f5c"
-                        onChangeText={text => setUsername(text)}/>
-                </View>
-                <View style={styles.inputView} >
-                    <TextInput
-                        secureTextEntry
-                        style={styles.inputText}
-                        placeholder="Password..."
-                        placeholderTextColor="#003f5c"
-                        onChangeText={text => setPassword(text)}/>
-                </View>
-                <TouchableOpacity>
-                    <Text style={styles.forgot}>Forgot Password?</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={()=>login(username,password) }
-                    style={styles.loginBtn}>
-                    <Text style={styles.loginText}>LOGIN</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={()=>signUp(username,password) }>
-                    <Text style={styles.loginText}>Sign Up</Text>
-                </TouchableOpacity>
-
-
+    return (
+        <View style={styles.container}>
+            <Text style={styles.logo}>trainder</Text>
+            <View style={styles.inputView} >
+                <TextInput
+                    style={styles.inputText}
+                    placeholder="Username...."
+                    placeholderTextColor="white"
+                    onChangeText={userName => setUsername(userName)}/>
             </View>
-        );
+            <View style={styles.inputView} >
+                <TextInput
+                    secureTextEntry
+                    style={styles.inputText}
+                    placeholder="Password..."
+                    placeholderTextColor="white"
+                    onChangeText={passWord => setPassword(passWord)}/>
+            </View>
+            <TouchableOpacity
+                onPress={()=>login(username,password) }
+                style={styles.loginBtn}>
+                <Text style={styles.loginText}>LOGIN</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={()=>signUp(username,password) }>
+                <Text style={styles.loginText}>Sign Up</Text>
+            </TouchableOpacity>
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
@@ -61,15 +56,15 @@ const styles = StyleSheet.create({
     },
     inputView:{
         backgroundColor:"#465881",
-        borderRadius:25,
-        height:50,
+        borderRadius:20,
+        height:60,
         marginBottom:20,
         justifyContent:"center",
         padding:20
     },
     inputText:{
         flex: 1,
-        height:50,
+        height:60,
         color:"white",
         width:"80%"
     },

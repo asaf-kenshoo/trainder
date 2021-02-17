@@ -6,71 +6,71 @@ const db = firebase.database();
 export const StoreContext = createContext([]);
 
 const StateProvider = ({ children }) => {
-        const [isSignedIn,setIsSignedIn] = useState(false);
-        const [username,setUsername] = useState('');
-        const [score, setScore] = useState('');
+    const [isSignedIn,setIsSignedIn] = useState(false);
+    const [username,setUsername] = useState('');
+    const [score, setScore] = useState('');
 
-        const login =(username,password) =>{
-            db.ref().child("users").child(username).once('value',
-                function(snapshot) {
-                    if (snapshot.exists()) {
-                        if(snapshot.val().password === password){
-                            setUsername(username);
-                            setScore(snapshot.val().score);
-                            setIsSignedIn(true);
-                        }
-                        else {
-                            //console.log("username and password do not match");
-                        }
-                    }
-                    else {
-                        //console.log("username: " + username + " does not exist");
-                    }
-                })
-                .catch(function(error) {
-                    //console.error(error);
-                });
-        };
-
-        const signUp =(username,password) => {
-            db.ref().child("users").child(username).once('value',
-                function(snapshot) {
-                    if (snapshot.exists()) {
-                        //console.log("username already exists!")
-                    }
-                    else {
-                        db.ref('users/' + username)
-                            .set({
-                                password: password,
-                                score: 0,
-                            });
-                        //console.log("added new user:" + username);
+    const login = (username,password) =>{
+        db.ref().child("users").child(username).once('value',
+            function(snapshot) {
+                if (snapshot.exists()) {
+                    if(snapshot.val().password === password){
                         setUsername(username);
-                        setScore(0);
+                        setScore(snapshot.val().score);
                         setIsSignedIn(true);
                     }
-                })
-                .catch(function(error) {
-                    //console.error(error);
-                });
-        };
+                    else {
+                        alert("username and password do not match")
+                    }
+                }
+                else {
+                    let alertStr = "username: " + username + " does not exist";
+                    alert(alertStr)
+                }
+            })
+            .catch(function(error) {
+                //console.error(error);
+            });
+    };
 
-        return (
-            <StoreContext.Provider
-                value={{
-                    username,
-                    setUsername,
-                    score,
-                    setScore,
-                    isSignedIn,
-                    setIsSignedIn,
-                    login,
-                    signUp
-                }}
-            >
-                {children}
-            </StoreContext.Provider>
-        );
+    const signUp =(username,password) => {
+        db.ref().child("users").child(username).once('value',
+            function(snapshot) {
+                if (snapshot.exists()) {
+                    alert("username already exists!")
+                }
+                else {
+                    db.ref('users/' + username)
+                        .set({
+                            password: password,
+                            score: 0,
+                        });
+                    setUsername(username);
+                    setScore(0);
+                    setIsSignedIn(true);
+                }
+            })
+            .catch(function(error) {
+                //console.error(error);
+            });
+    };
+
+    return (
+        <StoreContext.Provider
+            value={{
+                username,
+                setUsername,
+                score,
+                setScore,
+                isSignedIn,
+                setIsSignedIn,
+                login,
+                signUp
+            }}
+        >
+            {children}
+        </StoreContext.Provider>
+    );
 };
 export default StateProvider;
 export const useStore = () => useContext(StoreContext);
