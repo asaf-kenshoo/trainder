@@ -48,7 +48,7 @@ const CardItem = ({
                         {question} ?
                     </Text>
                 </View>
-                <Image source={{uri: image}} style={imageStyle}/>
+                <Image  resizeMode='contain' source={{uri: image}} style={imageStyle}/>
             </View>
 
             <View style={styles.descriptionWrapper}>
