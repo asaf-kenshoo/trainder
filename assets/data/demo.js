@@ -1,21 +1,5 @@
 module.exports = [
 	{
-		"ProductCluster_ID": "TRESTIQUE_Unspecified Lip Skincare_Balm_0",
-		"Solution_Type": "Unspecified Lip Skincare",
-		"Link": "https://www.amazon.com/dp/B07T4SVRHQ",
-		"Source_Product_Identifier": "B07T4SVRHQ",
-		"Title": "TRE'STIQUE Mini Plumping Lip Balm, Nicaragua Nude",
-		"Brand": "TRESTIQUE",
-		"Description": "This cute, pocket-size plumping balm is both collectible and crave-able. It enhances the look of lips with trèStiQue’s proprietary Maxi Lip and marine collagen microspheres, both clinically-proven ingredients that help lips look up to 32 percent fuller over time. The formula is also infused with shea butter for smooth, soft, and supple lips. It leaves lips moisturized, and plump-looking, with a kiss of color Welcome to trèStiQue, we simplify the way you use, carry and apply makeup for your new everyday routine. We offer high-performance, cruelty-free 2-in-1 products with refillable tools, made to carry in a zero-mess makeup bag.",
-		"Cluster_Title": "TRESTIQUE UNSPECIFIED LIP SKINCARE TRE STIQUE PLUMPING LIP BALM NICARAGUA",
-		"Image_URL": "https://images-na.ssl-images-amazon.com/images/I/11bouNQ2XDL.jpg",
-		"Question": "Is this a Unspecified Lip Skincare",
-		"key": "Amazon_USA_B07T4SVRHQ",
-		"counter_of_true": 0,
-		"counter_of_false": 0,
-		"Channel": "Amazon_USA"
-	},
-	{
 		"ProductCluster_ID": "AROMATHERAPY ASSOCIATES_Eye Serum_Serum_0",
 		"Solution_Type": "Eye Serum",
 		"Link": "https://www.amazon.com/dp/B07YNB4KZF",

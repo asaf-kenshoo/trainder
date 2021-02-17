@@ -8,7 +8,7 @@ export const StoreContext = createContext([]);
 const StateProvider = ({ children }) => {
     const [isSignedIn,setIsSignedIn] = useState(false);
     const [username,setUsername] = useState('');
-    const [score, setScore] = useState('');
+    const [score, setScore] = useState(0);
 
     const login = (username,password) =>{
         db.ref().child("users").child(username).once('value',

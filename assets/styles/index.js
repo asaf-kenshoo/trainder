@@ -133,15 +133,29 @@ export default StyleSheet.create({
 
     header: {
         backgroundColor: "#4F1F54",
-        height: 100,
-        flex: 1,
+        height: 80,
+        flexDirection: "row",
     },
     headerLogo: {
+        justifyContent: 'flex-start',
         width: 130,
-        flexDirection: "row",
-        height: '100%',
         alignItems: 'center',
         marginHorizontal: 10
+    },
+    rightHeader: {
+        flex:1,
+        justifyContent: 'flex-end',
+        flexDirection: "row",
+        marginHorizontal: 5
+    },
+    headerScore: {
+        paddingRight:13,
+        paddingTop: 4,
+        paddingBottom: 3,
+        marginHorizontal: -15,
+        marginVertical: 2,
+        color: "#E9D16E",
+        backgroundColor:"#7C7899"
     },
     headerText: {
         // fontFamily: ICON_FONT,

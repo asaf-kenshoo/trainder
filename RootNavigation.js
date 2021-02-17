@@ -12,49 +12,54 @@ import MatchesScreen from "./containers/Matches";
 import Login from "./components/Login";
 import Profile from "./containers/Profile";
 import {useStore} from "./store";
-
-
-function ProfileNav() {
-    return (
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <Profile/>
-        </View>
-    );
-}
+import {createStackNavigator} from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
-
+const Stack = createStackNavigator();
 const RootNavigate = () => {
     const {isSignedIn} = useStore();
     return (
         isSignedIn ? (
             <NavigationContainer>
-                <Tab.Navigator
-                    screenOptions={({route}) => ({
-                        tabBarIcon: ({focused, color, size}) => {
-                            let iconName;
-                            if (route.name === 'Home') {
-                                iconName = focused ? 'ios-information-circle' : 'ios-information-circle-outline';
-                            } else if (route.name === 'Settings') {
-                                iconName = focused ? 'ios-list-box' : 'ios-list';
-                            }
+                <Stack.Navigator initialRouteName="Main">
+                    <Stack.Screen
+                        name="Main"
+                        component={HomeScreen}
+                        options={{headerTitle: ''}}
+                    />
+                    <Stack.Screen
+                        name="Details"
+                        component={HomeScreen}
 
-                            // You can return any component that you like here!
-                            return <Ionicons name={iconName} size={size} color={color}/>;
-                        },
-                    })}
-                    tabBarOptions={{
-                        activeTintColor: 'tomato',
-                        inactiveTintColor: 'gray',
-                    }}
-                >
-                    <Tab.Screen name="Home" component={HomeScreen}/>
-                    <Tab.Screen name="Profile" component={ProfileNav}/>
-                </Tab.Navigator>
+                    />
+                </Stack.Navigator>
             </NavigationContainer>
-        ) : <Login/>
-    );
-};
-export default RootNavigate;
+                    // <Tab.Navigator
+                    //         screenOptions={({route}) => ({
+                    //             tabBarIcon: ({focused, color, size}) => {
+                    //                 let iconName;
+                    //                 if (route.name === 'Home') {
+                    //                     iconName = focused ? 'ios-information-circle' : 'ios-information-circle-outline';
+                    //                 } else if (route.name === 'Settings') {
+                    //                     iconName = focused ? 'ios-list-box' : 'ios-list';
+                    //                 }
+                    //
+                    //                 // You can return any component that you like here!
+                    //                 return <Ionicons name={iconName} size={size} color={color}/>;
+                    //             },
+                    //         })}
+                    //         tabBarOptions={{
+                    //             activeTintColor: 'tomato',
+                    //             inactiveTintColor: 'gray',
+                    //         }}
+                    //     >
+                    //         <Tab.Screen name="Home" component={HomeScreen}/>
+                    //     </Tab.Navigator>
+                    // </NavigationContainer>
+                    ) :
+                    <Login/>
+                        );
+                        };
+                        export default RootNavigate;
 
 
